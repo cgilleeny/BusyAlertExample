@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BusyAlertExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="efH-M5-jfW">
+                                <rect key="frame" x="99" y="28" width="94" height="29"/>
+                                <connections>
+                                    <action selector="stepperButtonHandler:" destination="BYZ-38-t0r" eventType="valueChanged" id="ecR-OK-AHw"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAK-w0-1eR">
+                                <rect key="frame" x="201.5" y="32.5" width="32.5" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32.5" id="hlL-RL-QHl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seconds:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55X-PD-bYj">
+                                <rect key="frame" x="20" y="32" width="71.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOw-3a-n5y">
+                                <rect key="frame" x="261" y="285" width="78" height="30"/>
+                                <state key="normal" title="Start Timer"/>
+                                <connections>
+                                    <action selector="startTimerButtonHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Gb-hz-XTG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="vOw-3a-n5y" secondAttribute="trailing" id="6IN-db-BSZ"/>
+                            <constraint firstItem="efH-M5-jfW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Pnh-Nl-oIp"/>
+                            <constraint firstItem="vOw-3a-n5y" firstAttribute="centerY" secondItem="efH-M5-jfW" secondAttribute="centerY" id="XL3-lP-Uo8"/>
+                            <constraint firstItem="55X-PD-bYj" firstAttribute="centerY" secondItem="efH-M5-jfW" secondAttribute="centerY" id="adz-Ks-eRC"/>
+                            <constraint firstItem="CAK-w0-1eR" firstAttribute="leading" secondItem="efH-M5-jfW" secondAttribute="trailing" constant="8" id="aej-eC-nO4"/>
+                            <constraint firstItem="efH-M5-jfW" firstAttribute="leading" secondItem="55X-PD-bYj" secondAttribute="trailing" constant="8" id="gqc-Ek-LFQ"/>
+                            <constraint firstItem="vOw-3a-n5y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oBG-pD-IoM"/>
+                            <constraint firstItem="vOw-3a-n5y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vdk-6P-fzt"/>
+                            <constraint firstItem="CAK-w0-1eR" firstAttribute="centerY" secondItem="efH-M5-jfW" secondAttribute="centerY" id="x96-Bn-UfG"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="55X-PD-bYj" secondAttribute="leading" id="y1y-2f-OE1"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6IN-db-BSZ"/>
+                                <exclude reference="XL3-lP-Uo8"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="startTimerButton" destination="vOw-3a-n5y" id="p5F-lk-hEg"/>
+                        <outlet property="stepper" destination="efH-M5-jfW" id="IZm-2Z-RP6"/>
+                        <outlet property="timerSecondsLabel" destination="CAK-w0-1eR" id="k51-bO-3AM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="440" y="362"/>
+        </scene>
+    </scenes>
+</document>
